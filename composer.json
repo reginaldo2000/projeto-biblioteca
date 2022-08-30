@@ -1,0 +1,13 @@
+{
+    "name": "estudo/sistema-biblioteca",
+    "autoload": {
+        "psr-4": {
+            "Source\\":"source/"
+        }
+    },
+    "require": {
+        "coffeecode/router": "1.0.8",
+        "coffeecode/optimizer": "2.0.2",
+        "league/plates": "^3.4"
+    }
+}
