@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #e9e9e9;
+}
+
+.login {
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.login .logo img {
+    flex-basis: 80%;
+}
+
+.form-login {
+    margin: 10px 0;
+}

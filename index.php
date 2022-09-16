@@ -7,6 +7,9 @@ use CoffeeCode\Router\Router;
 $route = new Router("http://localhost/sistema-biblioteca");
 
 $route->group("app")->namespace("Source\Controller");
+
+$route->get("/login", "AuthController:paginaLogin");
+
 $route->get("/inicio", function() {
     echo "HELLO WORLD!!!";
 });

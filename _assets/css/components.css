@@ -1,0 +1,108 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col-3 {
+    width: 25%;
+    flex: 0 0 auto;
+    margin: 8px 0;
+}
+
+.col-4 {
+    width: 33.3333%;
+    flex: 0 0 auto;
+    margin: 8px 0;
+}
+
+.col-6 {
+    flex: 0 0 auto;
+    flex-basis: 50%;
+    margin: 8px 0;
+}
+
+.col-12 {
+    flex-basis: 100%;
+    margin: 8px 0;
+}
+
+/* inputs */
+form label {
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    height: 32px;
+    padding: 0 5px;
+    color: #333;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border: 1px solid #286ba1;
+}
+
+
+/* Botões */
+button {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #333;
+    background-color: #ccc;
+    border: 1px solid #c5c5c5;
+    border-radius: 2px;
+    height: 32px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #bebebe;
+    border: 1px solid #aaa;
+}
+
+button.btn-azul {
+    background-color: #286ba1;
+    border: 1px solid #105a99;
+    color: #fff;
+}
+
+button.btn-azul:hover {
+    background-color: #105a99;
+    border: 1px solid #104465;
+}
+
+button.btn-verde {
+    background-color: #228b22;
+    border: 1px solid #117911;
+    color: #fff;
+}
+
+button.btn-verde:hover {
+    background-color: #117911;
+    border: 1px solid #006611;
+}
+
+button.btn-vermelho {
+    background-color: #c22;
+    border: 1px solid #a11;
+    color: #fff;
+}
+
+button.btn-vermelho:hover {
+    background-color: #a11;
+    border: 1px solid #911;
+}
+
+
+/* tamanhos */
+.wt-100 {
+    width: 100% !important;
+}
