@@ -17,20 +17,20 @@
         </div>
 
         <div class="form-login">
-            <form method="POST" action="" autocomplete="off">
+            <form method="POST" action="<?= url("/app/autenticar"); ?>" autocomplete="off">
                 <div class="row">
 
-                    <div class="col-3">
+                    <div class="col-12">
                         <label for="usuario">Usuário:</label>
-                        <input type="text" name="usuario" id="usuario">
+                        <input type="text" name="login" id="usuario">
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-12">
                         <label for="senha">Senha:</label>
                         <input type="password" name="senha" id="senha">
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-12">
                         <button type="submit" class="btn-azul wt-100">Entrar</button>
                     </div>
                 </div>

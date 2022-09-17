@@ -3,12 +3,16 @@
 include __DIR__ . "/vendor/autoload.php";
 
 use CoffeeCode\Router\Router;
+use Source\Util\Session;
+
+$session = new Session();
 
 $route = new Router("http://localhost/sistema-biblioteca");
 
 $route->group("app")->namespace("Source\Controller");
 
 $route->get("/login", "AuthController:paginaLogin");
+$route->post("/autenticar", "AuthController:autenticar");
 
 $route->get("/inicio", function() {
     echo "HELLO WORLD!!!";

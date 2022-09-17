@@ -3,20 +3,43 @@
 namespace Source\Entity;
 
 use DateTime;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="usuarios")
+ */
 class Usuario extends EntidadeGenerica
 {
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     private string $login;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     private string $senha;
 
+    /**
+     * @ORM\Column(type="string", length=120)
+     */
     private string $nome;
 
+     /**
+     * @ORM\Column(type="string", length=120)
+     */
     private string $email;
 
+     /**
+     * @ORM\Column(type="string", length=20)
+     */
     private string $perfil = "PADRAO";
 
+     /**
+     * @ORM\Column(type="datetime", name="data_criacao")
+     */
     private DateTime $dataCriacao;
 
     public function __construct(string $login, string $senha, string $nome, string $email)
