@@ -35,6 +35,8 @@ class AuthController extends Controller
             if (empty($usuario)) {
                 redirect("/app/login");
             }
+
+            $this->session->set("usuario", $usuario);
             redirect("/app/inicio");
         } catch (Exception $e) {
             echo $e;

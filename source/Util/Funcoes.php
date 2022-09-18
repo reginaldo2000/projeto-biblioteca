@@ -12,3 +12,7 @@ function redirect(string $rota): void {
     header("location: ".url($rota));
     exit;
 }
+
+function session(): object {
+    return (object) $_SESSION;
+}

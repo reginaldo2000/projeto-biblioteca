@@ -14,9 +14,7 @@ $route->group("app")->namespace("Source\Controller");
 $route->get("/login", "AuthController:paginaLogin");
 $route->post("/autenticar", "AuthController:autenticar");
 
-$route->get("/inicio", function() {
-    echo "HELLO WORLD!!!";
-});
+$route->get("/inicio", "DashboardController:paginaInicial");
 
 /* Rotas de erros */
 $route->group("oops")->namespace("Source\Controller");
