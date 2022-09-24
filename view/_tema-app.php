@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca - App</title>
     <link rel="stylesheet" href="<?= asset("/css/style.css"); ?>">
-    <link rel="stylesheet" href="<?= asset("/css/components.css"); ?>">
     <link rel="stylesheet" href="<?= asset("/font-awesome-4.7.0/css/font-awesome.min.css"); ?>">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -37,8 +37,8 @@
             </ul>
         </nav>
 
-        <section class="site-content">
-
+        <section class="site-content active">
+            <?= $this->section("content"); ?>
         </section>
 
         <footer class="site-footer">
@@ -47,6 +47,7 @@
     </main>
 
     <script src="<?= asset("/js/main.js"); ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

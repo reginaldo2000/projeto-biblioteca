@@ -33,6 +33,7 @@ class AuthController extends Controller
             ]);
 
             if (empty($usuario)) {
+                setMessage("Usuário ou senha inconrretos!", "alert-danger");
                 redirect("/app/login");
             }
 

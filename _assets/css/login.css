@@ -33,3 +33,7 @@ body {
 .form-login {
     margin: 10px 0;
 }
+
+.wt-100 {
+    width: 100%;
+}
