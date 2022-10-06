@@ -30,8 +30,8 @@
 
         <nav class="site-nav active">
             <ul class="menu">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Categorias</a></li>
+                <li><a href="<?= url("/app/inicio"); ?>">Dashboard</a></li>
+                <li><a href="<?= url("/app/categorias"); ?>">Categorias</a></li>
                 <li><a href="#">Livros</a></li>
                 <li><a href="#">Sair</a></li>
             </ul>
@@ -46,6 +46,7 @@
         </footer>
     </main>
 
+    <script src="<?= asset("/js/jquery.js"); ?>"></script>
     <script src="<?= asset("/js/main.js"); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

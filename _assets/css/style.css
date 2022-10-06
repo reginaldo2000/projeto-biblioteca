@@ -121,6 +121,30 @@
     margin-left: 270px;
 }
 
+.loading {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #286ba1;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: loading 0.5s infinite;
+}
+
+@keyframes loading {
+    25% {
+        border-top-color: #ccc;
+    }
+    50% {
+        border-right-color: #ccc;
+    }
+    75% {
+        border-bottom-color: #ccc;
+    }
+    100% {
+        border-left-color: #ccc;
+    }
+}
+
 @media(max-width:48rem) {
     .site .site-nav.active {
         margin-left: -250px;

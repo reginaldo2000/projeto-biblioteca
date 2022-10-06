@@ -20,6 +20,9 @@ $route->get("/inicio", "DashboardController:paginaInicial");
 // Categoria
 $route->get("/categorias", "CategoriaController:index");
 $route->post("/categorias/salvar", "CategoriaController:salvar");
+$route->get("/categorias/get/{id}", "CategoriaController:get");
+$route->put("/categorias/editar/{id}", "CategoriaController:editar");
+$route->delete("/categorias/excluir/{id}", "CategoriaController:excluir");
 
 /* Rotas de erros */
 $route->group("oops")->namespace("Source\Controller");

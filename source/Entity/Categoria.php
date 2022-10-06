@@ -20,6 +20,13 @@ class Categoria extends EntidadeGenerica
     {
     }
 
+    public function toArray(): array {
+        return [
+            "id" => $this->id,
+            "nome" => $this->nome
+        ];
+    }
+
     public function getNome(): string
     {
         return $this->nome;
