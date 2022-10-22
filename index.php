@@ -24,6 +24,10 @@ $route->get("/categorias/get/{id}", "CategoriaController:get");
 $route->put("/categorias/editar/{id}", "CategoriaController:editar");
 $route->delete("/categorias/excluir/{id}", "CategoriaController:excluir");
 
+// Livro
+$route->get("/livros", "LivroController:index");
+$route->post("/livros/salvar", "LivroController:salvarLivro");
+
 /* Rotas de erros */
 $route->group("oops")->namespace("Source\Controller");
 $route->get("/{codigo}", "ErroController:trataErro");

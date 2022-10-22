@@ -32,7 +32,7 @@
             <ul class="menu">
                 <li><a href="<?= url("/app/inicio"); ?>">Dashboard</a></li>
                 <li><a href="<?= url("/app/categorias"); ?>">Categorias</a></li>
-                <li><a href="#">Livros</a></li>
+                <li><a href="<?= url("/app/livros"); ?>">Livros</a></li>
                 <li><a href="#">Sair</a></li>
             </ul>
         </nav>
