@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="<?= url("/app/livros/salvar"); ?>" method="post" class="needs-validation" novalidate>
+            <form action="<?= url("/app/livros/salvar"); ?>" method="post" id="form-salvar-livro" class="needs-validation" novalidate>
 
                 <div class="modal-body">
                     <div class="row">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
                         <i class="fa fa-close"></i> Cancelar
                     </button>
                     <button type="submit" class="btn btn-primary">

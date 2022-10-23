@@ -27,6 +27,11 @@ $route->delete("/categorias/excluir/{id}", "CategoriaController:excluir");
 // Livro
 $route->get("/livros", "LivroController:index");
 $route->post("/livros/salvar", "LivroController:salvarLivro");
+$route->post("/livros/editar/{id}", "LivroController:salvarLivro");
+$route->get("/livros/visualizar/{id}", "LivroController:visualizarLivro");
+$route->get("/livros/prepare-edicao/{id}", "LivroController:prepareEdicao");
+$route->get("/livros/novo", "LivroController:novoLivro");
+
 
 /* Rotas de erros */
 $route->group("oops")->namespace("Source\Controller");

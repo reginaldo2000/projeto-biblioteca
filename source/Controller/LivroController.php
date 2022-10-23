@@ -29,6 +29,12 @@ class LivroController extends Controller
     {
         $categoriaId = filter_var($data["categoria"], FILTER_VALIDATE_INT) ?: 0;
         $livro = new Livro();
+
+        if (isset($data["id"])) {
+            $id = $data["id"];
+            $livro = LivroDAO::getInstance()->get($id);
+        }
+
         $livro->setTitulo(mb_strtoupper($data["titulo"]) ?? "");
         $livro->setResumo($data["resumo"] ?? "");
         $livro->setCategoria(CategoriaDAO::getInstance()->get($categoriaId));
@@ -40,9 +46,81 @@ class LivroController extends Controller
             redirect("/app/livros");
         }
 
-        LivroDAO::getInstance()->save($livro);
+        if (!isset($data["id"])) {
+            LivroDAO::getInstance()->save($livro);
+        } else {
+            LivroDAO::getInstance()->update();
+        }
 
-        setMessage("Livro cadastrado com sucesso!", "alert-success");
+        $msg = (!isset($data["id"]) ? 'cadastrado' : 'atualizado');
+        setMessage("Livro {$msg} com sucesso!", "alert-success");
         redirect("/app/livros");
     }
+
+    public function getLivro(array $data): void
+    {
+        $id = filter_var($data["id"], FILTER_VALIDATE_INT) ?: 0;
+        $livro = LivroDAO::getInstance()->get($id);
+        if (empty($livro)) {
+            $this->responseJson(true, [
+                "msg" => "Não foi possível encontrar o livro!"
+            ]);
+            return;
+        }
+        $this->responseJson(false, $livro->toArray());
+    }
+
+    public function visualizarLivro(array $data): void
+    {
+        $id = filter_var($data["id"], FILTER_VALIDATE_INT) ?: 0;
+        $livro = LivroDAO::getInstance()->get($id);
+        if (empty($livro)) {
+            $this->responseJson(true, [
+                "msg" => "Não foi possível encontrar o livro!"
+            ]);
+            return;
+        }
+        $render = $this->view->render("livro/render/render-visualizar", [
+            "livro" => $livro
+        ]);
+
+        $this->responseJson(false, [
+            "render" => $render
+        ]);
+    }
+
+    public function prepareEdicao(array $data): void
+    {
+        $id = filter_var($data["id"], FILTER_VALIDATE_INT) ?: 0;
+        $livro = LivroDAO::getInstance()->get($id);
+        if (empty($livro)) {
+            $this->responseJson(true, [
+                "msg" => "Não foi possível encontrar o livro!"
+            ]);
+            return;
+        }
+
+        $categorias = CategoriaDAO::getInstance()->list();
+
+        $render = $this->view->render("livro/render/render-editar", [
+            "livro" => $livro,
+            "categorias" => $categorias
+        ]);
+
+        $this->responseJson(false, [
+            "render" => $render
+        ]);
+    }
+
+    public function novoLivro(array $data): void
+    {
+        $categorias = CategoriaDAO::getInstance()->list();
+        $render = $this->view->render("livro/render/render-novo", [
+            "categorias" => $categorias
+        ]);
+        $this->responseJson(false, [
+            "render" => $render
+        ]);
+    }
+
 }

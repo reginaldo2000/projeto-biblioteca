@@ -9,7 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="livros")
  */
-class Livro extends EntidadeGenerica {
+class Livro extends EntidadeGenerica
+{
 
     /**
      * @ORM\Column
@@ -38,17 +39,29 @@ class Livro extends EntidadeGenerica {
 
     public function __construct()
     {
-        
     }
 
-    public function isValid(): bool {
-        if($this->titulo == "" || $this->resumo == "" || $this->autor == "") {
+    public function isValid(): bool
+    {
+        if ($this->titulo == "" || $this->resumo == "" || $this->autor == "") {
             return false;
         }
-        if(empty($this->categoria)) {
+        if (empty($this->categoria)) {
             return false;
         }
         return true;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            "id" => $this->id,
+            "titulo" => $this->titulo,
+            "resumo" => $this->resumo,
+            "categoria" => $this->categoria->toArray(),
+            "data_publicacao" => $this->dataPublicacao->format("Y-m-d"),
+            "autor" => $this->autor
+        ];
     }
 
     public function getTitulo(): string
@@ -100,5 +113,4 @@ class Livro extends EntidadeGenerica {
     {
         $this->categoria = $categoria;
     }
-
 }
